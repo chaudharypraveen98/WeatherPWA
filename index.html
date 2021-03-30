@@ -2,17 +2,49 @@
 <html lang="en">
   <head>
     <title>Praveen Chaudhary</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="manifest" href='manifest.json'>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="manifest" href="manifest.json" />
   </head>
   <body>
-    <h1>Hello World</h1>
-  <script>
-    if ('serviceWorker' in navigator){
-      navigator.serviceWorker.register('/service-worker.js');
-    }
-  </script>
-    
+    <div class="main-container">
+      <h1>The Weather PWA</h1>
+      <p>Please Enter the location or pincode</p>
+      <div class="search">
+        <input
+          id="weather-search"
+          type="text"
+          placeholder="Enter city, state..."
+        />
+        <button type="submit" id="submit-button">Search</button>
+      </div>
+    </div>
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      const APIkey = "";
+      var cityName = document.getElementById('weather-search').value;
+      console.log(cityName);
+      var settings = {
+        method: "GET",
+        url:
+          `api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${APIkey}`,
+      };
+      $.ajax(settings).done(function (response) {
+        console.log(response);
+      });
+    </script>
+    <script>
+      if ("serviceWorker" in navigator) {
+        navigator.serviceWorker.register("/service-worker.js");
+      }
+    </script>
   </body>
 </html>
