@@ -9,6 +9,12 @@
   "background_color":"#000000",
   "icons": [
     {
+      "src": "icon//logo512x512.png",
+      "type": "image/png",
+      "sizes": "512x512",
+      "purpose": "any maskable"
+    },
+    {
       "src": "icon//android-icon-192x192-dunplab-manifest-39628.png",
       "type": "image/png",
       "sizes": "192x192"
