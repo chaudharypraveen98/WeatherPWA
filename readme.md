@@ -9,5 +9,8 @@ It will show the weather depending on the city, state, or zipcode entered. It is
 2. Light weight with only jquery dependency.
 3. Responsive and Great UI.
 
+#### Api used
+Open weather Api
+
 ##### Last Update
 31 March 2021
