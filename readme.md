@@ -8,6 +8,7 @@ It will show the weather depending on the city, state, or zipcode entered. It is
 1. Pass all the lighthouse test
 2. Light weight with only jquery dependency.
 3. Responsive and Great UI.
+4. Clean Codebase
 
 #### Api used
 Open weather Api
