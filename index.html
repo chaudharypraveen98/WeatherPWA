@@ -24,22 +24,28 @@
         />
         <button type="submit" id="submit-button">Search</button>
       </div>
+      <div class="details">
+        <h2 id="desc"></h2>
+        <h2 id="max-temp"></h2>
+        <h2 id="min-temp"></h2>
+      </div>
     </div>
     <script
-      src="https://code.jquery.com/jquery-3.6.0.min.js"
-      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
-      crossorigin="anonymous"
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
     ></script>
     <script>
-      const APIkey = "";
+      const APIkey = "Enter your key";
 
       $("#submit-button").click(function () {
         var cityName = document.getElementById("weather-search").value;
         console.log(cityName);
         $.get(
-          `api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${APIkey}`,
+          `http://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${APIkey}`,
           function (data, status) {
-            alert("Data: " + data + "\nStatus: " + status);
+            console.log(data);
+            document.getElementById("desc").innerText=data['weather'][0]['description']
+            document.getElementById("max-temp").innerText=data['main']['temp_max']+" F"
+            document.getElementById("min-temp").innerText=data['main']['temp_max']+" F"
           }
         );
       });
